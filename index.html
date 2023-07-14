@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Potencia de un numero</title>
+    <meta name="viewport" content="width=device-width">
+    <style>
+        html {font-family: sans-serif; text-align: center}
+        body {display: inline-block; text-align: left}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Potencia de un numero</h1>
+    </header>
+    <form id="forma" action="javascript:procesar()">
+        <p>
+            <label for="numero">Ingresa un número:</label>
+            <input type="number" id="numero">
+            <button onclick="calcularPotencias()">Calcular</button>
+            <button onclick="limpiarTextArea()">Limpiar</button>
+            <br><br>
+            <textarea id="resultado" rows="15" cols="50" readonly></textarea>
+        </p>
+    </form>
+    <footer>
+        &copy; 2023 Ramirez Flores Eduardo.
+    </footer>
+    <script>
+        "use strict";
+        function calcularPotencias() {
+            var numero = parseInt(document.getElementById("numero").value);
+            var resultado = "";
+
+            for (var i = 0; i <= 10; i++) {
+                var potencia = Math.pow(numero, i);
+                resultado += numero + " elevado a la " + i + " = " + potencia + "\n";
+            }
+
+            document.getElementById("resultado").value = resultado;
+        }
+
+        function limpiarTextArea() {
+            document.getElementById("resultado").value = "";
+            document.getElementById("numero").value = "";
+        }
+    </script>
+</body>
+</html>
